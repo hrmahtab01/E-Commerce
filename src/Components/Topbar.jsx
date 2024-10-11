@@ -8,8 +8,8 @@ const Topbar = () => {
   return (
     <div className="bg-primaryColor w-full py-3">
       <Container>
-        <Flex className="justify-between items-center my-auto">
-          <Flex className="ml-[250px]">
+        <Flex className="justify-between items-center my-auto ml-[250px]">
+          <Flex className="">
             <Text className="text-base font-poppins font-normal text-Secondary">
               Summer Sale For All Swim Suits And Free Express Delivery - OFF
               50%!
