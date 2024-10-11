@@ -6,7 +6,7 @@ import Flex from "./Common/Flex";
 
 const Topbar = () => {
   return (
-    <div className="bg-primaryColor w-full py-3">
+    <div className="bg-primaryColor w-full py-3 hidden lg:block">
       <Container>
         <Flex className="justify-between items-center my-auto ml-[250px]">
           <Flex className="">
