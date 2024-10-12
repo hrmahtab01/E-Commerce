@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -12,6 +12,9 @@ import { GrLinkNext } from "react-icons/gr";
 import Heroimage from "../assets/Hero.png";
 
 const Hero = () => {
+
+ 
+
   const settings = {
     dots: true,
     infinite: true,
@@ -32,7 +35,7 @@ const Hero = () => {
                   iPhone 14 Series
                 </Text>
               </Flex>
-              <Title className="text-4xl font-semibold font-inter text-Secondary w-[294px] leading-[60px]">
+              <Title className="text-5xl font-semibold font-inter text-Secondary w-[294px] leading-[60px]">
                 Up to 10%
                 <br />
                 off Voucher

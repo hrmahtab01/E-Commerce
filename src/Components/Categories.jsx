@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import Container from "./Common/Container";
 import Flex from "./Common/Flex";
 import Title from "./Common/Title";
@@ -14,52 +14,56 @@ import { CiHeadphones } from "react-icons/ci";
 import { FaGamepad } from "react-icons/fa6";
 import { GrFormPrevious } from "react-icons/gr";
 import { MdNavigateNext } from "react-icons/md";
+import InhancheImg from "../assets/inhance.png";
+import Bgimage from "../assets/bgimage.png";
+import CommonBtn from "./Common/CommonBtn";
+import React, { Component } from "react";
 
+import FlipCountdown from "@rumess/react-flip-countdown";
 
 const NextArrow = ({ onClick }) => (
-    <button
-      onClick={onClick}
-      style={{
-        position: 'absolute',
-        top: '-25%',
-        right: '10px',
-        transform: 'translateY(-50%)',
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        color: 'white',
-        border: 'none',
-        borderRadius: '50%',
-        padding: '10px',
-        cursor: 'pointer',
-        zIndex: 1,
-      }}
-    >
-     <MdNavigateNext className="text-2xl" />
-    </button>
-  );
+  <button
+    onClick={onClick}
+    style={{
+      position: "absolute",
+      top: "-25%",
+      right: "10px",
+      transform: "translateY(-50%)",
+      backgroundColor: "rgba(0, 0, 0, 0.5)",
+      color: "white",
+      border: "none",
+      borderRadius: "50%",
+      padding: "10px",
+      cursor: "pointer",
+      zIndex: 1,
+    }}
+  >
+    <MdNavigateNext className="text-2xl" />
+  </button>
+);
 
-  const PrevArrow = ({ onClick }) => (
-    <button
-      onClick={onClick}
-      style={{
-        position: 'absolute',
-        top: '-25%',
-        right: '60px',
-        transform: 'translateY(-50%)',
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        color: 'white',
-        border: 'none',
-        borderRadius: '50%',
-        padding: '10px',
-        cursor: 'pointer',
-        zIndex: 1,
-      }}
-    >
-   <GrFormPrevious className="text-2xl" />
-    </button>
-  );
+const PrevArrow = ({ onClick }) => (
+  <button
+    onClick={onClick}
+    style={{
+      position: "absolute",
+      top: "-25%",
+      right: "60px",
+      transform: "translateY(-50%)",
+      backgroundColor: "rgba(0, 0, 0, 0.5)",
+      color: "white",
+      border: "none",
+      borderRadius: "50%",
+      padding: "10px",
+      cursor: "pointer",
+      zIndex: 1,
+    }}
+  >
+    <GrFormPrevious className="text-2xl" />
+  </button>
+);
 
 const Categories = () => {
-
   var settings = {
     dots: false,
     infinite: true,
@@ -70,7 +74,7 @@ const Categories = () => {
     prevArrow: <PrevArrow />,
   };
   return (
-    <div className="my-[80px]">
+    <div className="mt-[80px]">
       <Container>
         <div>
           <Flex className="items-center gap-4">
@@ -83,7 +87,7 @@ const Categories = () => {
             Browse By Category
           </Title>
         </div>
-        <div className="mt-[60px] cateslick">
+        <div className="pt-[60px] cateslick border-b">
           <Slider {...settings}>
             <div className="w-[170px] h-[145px] bg-SecondarySecond  rounded-[4px] group hover:bg-ThirdColor duration-300">
               <div className="flex flex-col justify-center items-center">
@@ -150,6 +154,65 @@ const Categories = () => {
               </div>
             </div>
           </Slider>
+        </div>
+        <div className="w-full h-[500px] bg-primaryColor">
+          <div className="grid grid-cols-1 lg:grid-cols-2 relative">
+            <div className="py-[70px] pl-[56px]">
+              <div>
+                <Text className="text-base font-semibold font-poppins text-[#00FF66] ">
+                  Categories
+                </Text>
+                <Title className="text-5xl font-semibold font-inter text-Secondary  leading-[60px] mt-[32px] tracking-wider">
+                  Enhance Your <br /> Music Experience
+                </Title>
+              </div>
+              <div className="flex gap-6 mt-[32px]">
+                <div className="w-[62px] h-[62px] bg-Secondary rounded-full flex flex-col justify-center items-center">
+                  <Text className="text-base text-primaryColor font-poppins font-semibold">
+                    48
+                  </Text>
+                  <Text className="text-[11px] text-primaryColor font-normal font-poppins">
+                    Days
+                  </Text>
+                </div>
+                <div className="w-[62px] h-[62px] bg-Secondary rounded-full flex flex-col justify-center items-center">
+                  <Text className="text-base text-primaryColor font-poppins font-semibold">
+                    12
+                  </Text>
+                  <Text className="text-[11px] text-primaryColor font-normal font-poppins">
+                    Hours
+                  </Text>
+                </div>
+                <div className="w-[62px] h-[62px] bg-Secondary rounded-full flex flex-col justify-center items-center">
+                  <Text className="text-base text-primaryColor font-poppins font-semibold">
+                    58
+                  </Text>
+                  <Text className="text-[11px] text-primaryColor font-normal font-poppins">
+                    Minutes
+                  </Text>
+                </div>
+                <div className="w-[62px] h-[62px] bg-Secondary rounded-full flex flex-col justify-center items-center">
+                  <Text className="text-base text-primaryColor font-poppins font-semibold">
+                   22
+                  </Text>
+                  <Text className="text-[11px] text-primaryColor font-normal font-poppins">
+                    Seconds
+                  </Text>
+                </div>
+              </div>
+              <CommonBtn classname="py-[16px] px-[48px] rounded-[4px] bg-FourColor text-base font-medium font-poppins mt-[40px]">
+                Buy Now!
+              </CommonBtn>
+            </div>
+            <div className="relative w-2/4">
+              <div className="bg-[#D9D9D9]/30 w-[500px] h-[500px] rounded-full blur-[50px] z-0 "></div>
+            </div>
+            <img
+              className=" absolute top-0  w-[600px]  h-[420px] right-[60px] rotate-y-[-180deg] z-[999]"
+              src={InhancheImg}
+              alt=""
+            />
+          </div>
         </div>
       </Container>
     </div>

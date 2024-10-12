@@ -10,7 +10,7 @@ import { MdOutlineLocalGroceryStore } from "react-icons/md";
 
 const Navbar = () => {
   return (
-    <nav className="w-full pt-[39px] pb-[15px] mt-[39px] mb-[15px] border-b">
+    <nav className="w-full pt-[39px] pb-[15px] mt-[39px] mb-[15px] border-b bg-[#fff] ">
       <Container>
         <Flex className="justify-between items-center  ">
           <Flex>
