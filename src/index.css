@@ -20,8 +20,8 @@
   }
   
   .slick-dots li button {
-    width: 15px !important;
-    height: 15px !important;
+    width: 12px !important;
+    height: 12px !important;
     color: red !important; 
     background: transparent; 
     border: none; 
@@ -30,8 +30,8 @@
   .slick-dots li button::before {
     content: ''; 
     display: block;
-    width: 15px; 
-    height: 15px; 
+    width: 12px; 
+    height: 12px; 
     background-color: #fff; 
     border-radius: 50%; 
     opacity: 0.5; 
@@ -40,5 +40,9 @@
   .slick-dots li.slick-active button::before {
     opacity: 1; 
     background-color: red; 
+  }
+
+  .cateslick .slick-slide {
+    margin: 0 20px; 
   }
   
