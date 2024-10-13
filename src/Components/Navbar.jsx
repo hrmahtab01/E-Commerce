@@ -29,7 +29,7 @@ const Navbar = () => {
           <Flex className="gap-[40px]">
             <Flex className="w-[243px] h-[38px] relative">
               <Input
-                className="w-full h-full bg-SecondarySecond rounded-[4px] text-[14px] font-poppins font-semibold text-[#000000] placeholder:text-[12px] placeholder:font-poppins placeholder:text-[#000]/50 placeholder:font-normal pl-[20px]"
+                className="w-full h-full bg-SecondarySecond rounded-[4px] text-[14px] font-poppins font-semibold text-[#000000] placeholder:text-[12px] placeholder:font-poppins placeholder:text-[#000]/50 placeholder:font-normal pl-[20px] pr-[40px]"
                 placeholder="What are you looking for?"
                 type="text"
               />
