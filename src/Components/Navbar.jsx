@@ -23,7 +23,7 @@ const Navbar = () => {
           <Flex>
             <List className="flex gap-[48px]">
               <Link to="/"><Listitem className={`${Location.pathname == "/" && "border-b border-primaryColor"}`}>Home</Listitem></Link>
-              <Listitem>Contact</Listitem>
+             <Link to="/Contact"> <Listitem className={`${Location.pathname == "/Contact" && "border-b border-primaryColor"}`}>Contact</Listitem></Link>
              <Link to="/About"> <Listitem className={`${Location.pathname == "/About" && "border-b border-primaryColor"}`}>About</Listitem></Link>
               <Link to="/signup"><Listitem className={`${Location.pathname == "/signup" && "border-b border-primaryColor"}`}>Signup</Listitem></Link>
             </List>
@@ -37,18 +37,15 @@ const Navbar = () => {
               />
               <CiSearch className="absolute bottom-[7px] right-[12px] text-[24px] text-[#000]" />
             </Flex>
-           {Location.pathname == '/signup' || Location.pathname == '/login'?
+        
            
-            <Flex className="items-center hidden">
+            <Flex className={`items-center  ${Location.pathname == '/signup' || Location.pathname == '/login' ?  "hidden" :"block"}`}>
              
               <MdOutlineLocalGroceryStore className="text-[32px] text-primaryColor" />
             </Flex>
-            :
-            <Flex className="items-center ">
-             
-            <MdOutlineLocalGroceryStore className="text-[32px] text-primaryColor" />
-          </Flex>
-          }
+            
+           
+          
           </Flex>
         </Flex>
       </Container>
