@@ -6,43 +6,54 @@
 @tailwind utilities;
 
 .customdot {
-    position: relative;
-  }
-  
-  .slick-dots {
-    position: absolute;
-    bottom: 10px; 
-    right: 0;  
-  }
-  
-  .slick-dots li {
-    margin: 0 5px; 
-  }
-  
-  .slick-dots li button {
-    width: 12px !important;
-    height: 12px !important;
-    color: red !important; 
-    background: transparent; 
-    border: none; 
-  }
-  
-  .slick-dots li button::before {
-    content: ''; 
-    display: block;
-    width: 12px; 
-    height: 12px; 
-    background-color: #fff; 
-    border-radius: 50%; 
-    opacity: 0.5; 
-  }
-  
-  .slick-dots li.slick-active button::before {
-    opacity: 1; 
-    background-color: red; 
-  }
+  position: relative;
+}
 
-  .cateslick .slick-slide {
-    margin: 0 20px; 
-  }
-  
+.slick-dots {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+}
+
+.slick-dots li {
+  margin: 0 5px;
+}
+
+.slick-dots li button {
+  width: 12px !important;
+  height: 12px !important;
+  color: red !important;
+  background: transparent;
+  border: none;
+}
+
+.slick-dots li button::before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.slick-dots li.slick-active button::before {
+  opacity: 1;
+  background-color: red;
+}
+
+.cateslick .slick-slide {
+  margin: 0 20px;
+}
+
+.teamslick .slick-dots li button::before {
+  color: #0000 !important;
+}
+.teamslick .slick-dots {
+  bottom: -80px !important;
+}
+.teamslick .slick-dots li button::before {
+  content: "";
+  background-color: #000 !important;
+}
+

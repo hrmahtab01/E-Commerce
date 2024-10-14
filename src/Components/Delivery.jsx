@@ -5,10 +5,13 @@ import Title from "./Common/Title";
 import Text from "./Common/Text";
 import { PiHeadsetDuotone } from "react-icons/pi";
 import { AiOutlineSafety } from "react-icons/ai";
+import { useLocation } from "react-router-dom";
 
 const Delivery = () => {
+
+  const Location = useLocation()
   return (
-    <div className="mt-[80px] mb-[153px]">
+    <div className={`mt-[80px]  ${Location.pathname == '/About' ? "mb-[80px]" : 'mb-[153px]'}`}>
       <Container>
         <div className="px-[113px] grid grid-cols-1 lg:grid-cols-3 ">
           <div className="flex flex-col justify-center items-center">
