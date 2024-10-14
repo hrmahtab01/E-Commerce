@@ -11,6 +11,7 @@ import RootComponent from "./Layout/RootComponent";
 import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
 import Cart from "./Pages/Cart";
+import Checkout from "./Pages/Checkout";
 
 const App = () => {
   const Router = createBrowserRouter(
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/Signup" element={<Signup/>}/>
         <Route path="/Login" element={<Login/>}/>
         <Route path="/cart" element={<Cart/>}/>
+        <Route path="/checkout" element={<Checkout/>}/>
       </Route>,
     )
   );
