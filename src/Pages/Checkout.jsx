@@ -97,7 +97,7 @@ const Checkout = () => {
                   <Text className="text-base text-primaryColor font-normal font-poppins">
                     Save this information for faster check-out next time
                   </Text>
-                </div>
+                </div>  
               </div>
             </div>
             <div className="w-[527px] h-[600px] mt-[80px]">

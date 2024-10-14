@@ -12,6 +12,8 @@ import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
 import Cart from "./Pages/Cart";
 import Checkout from "./Pages/Checkout";
+import Account from "./Pages/Account";
+import About from "./Pages/About";
 
 const App = () => {
   const Router = createBrowserRouter(
@@ -22,6 +24,9 @@ const App = () => {
         <Route path="/Login" element={<Login/>}/>
         <Route path="/cart" element={<Cart/>}/>
         <Route path="/checkout" element={<Checkout/>}/>
+        <Route path="/Account" element={<Account/>}/>
+        <Route path="/About" element={<About/>}/>
+
       </Route>,
     )
   );

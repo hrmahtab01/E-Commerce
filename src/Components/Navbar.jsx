@@ -22,10 +22,10 @@ const Navbar = () => {
           </Flex>
           <Flex>
             <List className="flex gap-[48px]">
-              <Link to="/"><Listitem className={`${Location.pathname == "/" && "border-b"}`}>Home</Listitem></Link>
+              <Link to="/"><Listitem className={`${Location.pathname == "/" && "border-b border-primaryColor"}`}>Home</Listitem></Link>
               <Listitem>Contact</Listitem>
-              <Listitem>About</Listitem>
-              <Link to="/signup"><Listitem className={`${Location.pathname == "/signup" && "border-b"}`}>Signup</Listitem></Link>
+             <Link to="/About"> <Listitem className={`${Location.pathname == "/About" && "border-b border-primaryColor"}`}>About</Listitem></Link>
+              <Link to="/signup"><Listitem className={`${Location.pathname == "/signup" && "border-b border-primaryColor"}`}>Signup</Listitem></Link>
             </List>
           </Flex>
           <Flex className="gap-[40px]">
