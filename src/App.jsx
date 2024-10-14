@@ -10,6 +10,7 @@ import Home from "./Pages/Home";
 import RootComponent from "./Layout/RootComponent";
 import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
+import Cart from "./Pages/Cart";
 
 const App = () => {
   const Router = createBrowserRouter(
@@ -18,6 +19,7 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="/Signup" element={<Signup/>}/>
         <Route path="/Login" element={<Login/>}/>
+        <Route path="/cart" element={<Cart/>}/>
       </Route>,
     )
   );

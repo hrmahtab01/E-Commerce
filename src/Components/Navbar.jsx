@@ -7,8 +7,10 @@ import Listitem from "./Common/Listitem";
 import Input from "./Common/Input";
 import { CiSearch } from "react-icons/ci";
 import { MdOutlineLocalGroceryStore } from "react-icons/md";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const Location =useLocation()
   return (
     <nav className="w-full pt-[39px] pb-[15px] mt-[39px] mb-[15px] border-b bg-[#fff] ">
       <Container>
@@ -20,10 +22,10 @@ const Navbar = () => {
           </Flex>
           <Flex>
             <List className="flex gap-[48px]">
-              <Listitem>Home</Listitem>
+              <Link to="/"><Listitem className={`${Location.pathname == "/" && "border-b"}`}>Home</Listitem></Link>
               <Listitem>Contact</Listitem>
               <Listitem>About</Listitem>
-              <Listitem>Signup</Listitem>
+              <Link to="/signup"><Listitem className={`${Location.pathname == "/signup" && "border-b"}`}>Signup</Listitem></Link>
             </List>
           </Flex>
           <Flex className="gap-[40px]">
@@ -35,10 +37,18 @@ const Navbar = () => {
               />
               <CiSearch className="absolute bottom-[7px] right-[12px] text-[24px] text-[#000]" />
             </Flex>
-            <Flex className="items-center">
+           {Location.pathname == '/signup' || Location.pathname == '/login'?
+           
+            <Flex className="items-center hidden">
              
               <MdOutlineLocalGroceryStore className="text-[32px] text-primaryColor" />
             </Flex>
+            :
+            <Flex className="items-center ">
+             
+            <MdOutlineLocalGroceryStore className="text-[32px] text-primaryColor" />
+          </Flex>
+          }
           </Flex>
         </Flex>
       </Container>

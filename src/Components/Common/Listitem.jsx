@@ -1,9 +1,9 @@
 import React, { Children } from 'react'
 
-const Listitem = ({children ,}) => {
+const Listitem = ({children , className}) => {
   return (
     <>
-      <li className="text-base font-poppins" >{children}</li>
+      <li className={`text-base font-poppins ${className}`} >{children}</li>
     </>
   )
 }

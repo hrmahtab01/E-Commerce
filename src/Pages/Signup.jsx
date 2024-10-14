@@ -4,6 +4,7 @@ import Title from "../Components/Common/Title";
 import Text from "../Components/Common/Text";
 import CommonBtn from "../Components/Common/CommonBtn";
 import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   return (
@@ -50,9 +51,9 @@ const Signup = () => {
           </CommonBtn>
           <Text className="text-base text-primaryColor/70 font-normal font-poppins leading-[24px]  mt-[34px] text-center ">
             Already have account?{" "}
-            <span className="text-primaryColor font-medium border-b ml-4 cursor-pointer">
+           <Link to="/login"> <span className="text-primaryColor font-medium border-b ml-4 cursor-pointer">
               Log in
-            </span>
+            </span></Link>
           </Text>
         </div>
       </div>
