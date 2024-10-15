@@ -16,6 +16,7 @@ import Account from "./Pages/Account";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Error from "./Pages/Error";
+import Product from "./Pages/Product";
 
 const App = () => {
   const Router = createBrowserRouter(
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/About" element={<About/>}/>
         <Route path="/Contact" element={<Contact/>}/>
         <Route path="/Error" element={<Error/>}/>
+        <Route path="/Product" element={<Product/>}/>
 
       </Route>,
     )
