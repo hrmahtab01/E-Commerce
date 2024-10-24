@@ -265,7 +265,7 @@ const Team = () => {
                 </li>
               </ul>
             </div>
-            <div>
+            <div>   
               <div className="w-[370px] bg-SecondarySecond h-[430px]">
                 <img src={teamImagetwo} alt="teamImagetwo" />
               </div>

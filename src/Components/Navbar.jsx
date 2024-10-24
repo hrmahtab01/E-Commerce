@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Flex from "./Common/Flex";
 import Title from "./Common/Title";
 import Container from "./Common/Container";
@@ -8,13 +8,17 @@ import Input from "./Common/Input";
 import { CiSearch } from "react-icons/ci";
 import { MdOutlineLocalGroceryStore } from "react-icons/md";
 import { Link, useLocation } from "react-router-dom";
+import { IoMdMenu } from "react-icons/io";
+import { RxCross2 } from "react-icons/rx";
 
 const Navbar = () => {
-  const Location =useLocation()
+  const location = useLocation();
+  const [menuBar, setMenuBar] = useState(false);
+
   return (
-    <nav className="w-full pt-[39px] pb-[15px] mt-[39px] mb-[15px] border-b bg-[#fff] ">
+    <nav className="w-full lg:pt-[39px] pt-[16px] pb-[15px] lg:mt-[39px] mb-[15px] border-b bg-[#fff] ">
       <Container>
-        <Flex className="justify-between items-center  ">
+        <Flex className="justify-between items-center md:flex hidden ">
           <Flex>
             <Title className="text-[24px] font-bold font-inter text-primaryColor">
               Exclusive
@@ -22,10 +26,26 @@ const Navbar = () => {
           </Flex>
           <Flex>
             <List className="flex gap-[48px]">
-              <Link to="/"><Listitem className={`${Location.pathname == "/" && "border-b border-primaryColor"}`}>Home</Listitem></Link>
-             <Link to="/Contact"> <Listitem className={`${Location.pathname == "/Contact" && "border-b border-primaryColor"}`}>Contact</Listitem></Link>
-             <Link to="/About"> <Listitem className={`${Location.pathname == "/About" && "border-b border-primaryColor"}`}>About</Listitem></Link>
-              <Link to="/signup"><Listitem className={`${Location.pathname == "/signup" && "border-b border-primaryColor"}`}>Signup</Listitem></Link>
+              <Link to="/">
+                <Listitem className={`${location.pathname === "/" && "border-b border-primaryColor"}`}>
+                  Home
+                </Listitem>
+              </Link>
+              <Link to="/Contact">
+                <Listitem className={`${location.pathname === "/Contact" && "border-b border-primaryColor"}`}>
+                  Contact
+                </Listitem>
+              </Link>
+              <Link to="/About">
+                <Listitem className={`${location.pathname === "/About" && "border-b border-primaryColor"}`}>
+                  About
+                </Listitem>
+              </Link>
+              <Link to="/signup">
+                <Listitem className={`${location.pathname === "/signup" && "border-b border-primaryColor"}`}>
+                  Signup
+                </Listitem>
+              </Link>
             </List>
           </Flex>
           <Flex className="gap-[40px]">
@@ -37,17 +57,43 @@ const Navbar = () => {
               />
               <CiSearch className="absolute bottom-[7px] right-[12px] text-[24px] text-[#000]" />
             </Flex>
-        
-           
-            <Flex className={`items-center  ${Location.pathname == '/signup' || Location.pathname == '/login' ?  "hidden" :"block"}`}>
-             
+            <Flex
+              className={`items-center ${location.pathname === "/signup" || location.pathname === "/login" ? "hidden" : "block"}`}
+            >
               <MdOutlineLocalGroceryStore className="text-[32px] text-primaryColor" />
             </Flex>
-            
-           
-          
           </Flex>
         </Flex>
+
+        {/* Mobile Navbar */}
+        <div className="block lg:hidden">
+          <Flex className="justify-between items-center">
+            <Title className="text-[16px] font-bold font-inter text-primaryColor">
+              Exclusive
+            </Title>
+            <button onClick={() => setMenuBar(!menuBar)}>
+              {menuBar ? <RxCross2 className="text-[24px]" /> : <IoMdMenu className="text-[24px]" />}
+            </button>
+          </Flex>
+          {menuBar && (
+            <div className="mt-2 bg-white border rounded-lg shadow-md">
+              <List className="flex flex-col gap-2 p-4">
+                <Link to="/">
+                  <Listitem className={`${location.pathname === "/" && "font-bold text-primaryColor"}`}>Home</Listitem>
+                </Link>
+                <Link to="/Contact">
+                  <Listitem className={`${location.pathname === "/Contact" && "font-bold text-primaryColor"}`}>Contact</Listitem>
+                </Link>
+                <Link to="/About">
+                  <Listitem className={`${location.pathname === "/About" && "font-bold text-primaryColor"}`}>About</Listitem>
+                </Link>
+                <Link to="/signup">
+                  <Listitem className={`${location.pathname === "/signup" && "font-bold text-primaryColor"}`}>Signup</Listitem>
+                </Link>
+              </List>
+            </div>
+          )}
+        </div>
       </Container>
     </nav>
   );

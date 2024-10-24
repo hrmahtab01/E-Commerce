@@ -27,7 +27,8 @@ const Hero = () => {
     <div className="mt-[40px]">
       <Container>
         <Slider {...settings}>
-          <div className="bg-primaryColor w-full h-[344px] flex items-center relative overflow-hidden customdot">
+          
+          <div className="bg-primaryColor w-full h-[344px] flex items-center relative overflow-hidden gap-3 lg:gap-0">
             <div className="pt-[68px] pl-[64px] flex flex-col gap-5">
               <Flex className="items-center gap-7">
                 <FaApple className="text-Secondary w-[40px] h-[49px]" />
@@ -35,7 +36,7 @@ const Hero = () => {
                   iPhone 14 Series
                 </Text>
               </Flex>
-              <Title className="text-5xl font-semibold font-inter text-Secondary w-[294px] leading-[60px]">
+              <Title className="lg:text-4xl text-xl font-semibold font-inter text-Secondary leading-[60px]">
                 Up to 10%
                 <br />
                 off Voucher
@@ -47,15 +48,15 @@ const Hero = () => {
                 <GrLinkNext className="text-[24px] font-normal font-poppins text-[#fff]" />
               </Flex>
             </div>
-            <div className="flex-1 flex justify-center items-center text-[#fff] absolute bottom-[-10px] right-[252px]">
+            <div className="flex-1 flex justify-center items-center text-[#fff] absolute lg:bottom-[-10px] md:right-[252px] right-0 bottom-5">
               <img
-                className="w-[496px] h-[352px]"
+                className="lg:w-[496px] w-[200px] h-[200px] lg:h-[352px]"
                 src={Heroimage}
                 alt="Heroimage"
               />
             </div>
           </div>
-          <div className="bg-primaryColor w-full h-[344px] flex items-center relative overflow-hidden">
+          <div className="bg-primaryColor w-full h-[344px] flex items-center relative overflow-hidden gap-3 lg:gap-0">
             <div className="pt-[68px] pl-[64px] flex flex-col gap-5">
               <Flex className="items-center gap-7">
                 <FaApple className="text-Secondary w-[40px] h-[49px]" />
@@ -63,7 +64,7 @@ const Hero = () => {
                   iPhone 14 Series
                 </Text>
               </Flex>
-              <Title className="text-4xl font-semibold font-inter text-Secondary w-[294px] leading-[60px]">
+              <Title className="lg:text-4xl text-xl font-semibold font-inter text-Secondary leading-[60px]">
                 Up to 10%
                 <br />
                 off Voucher
@@ -75,15 +76,15 @@ const Hero = () => {
                 <GrLinkNext className="text-[24px] font-normal font-poppins text-[#fff]" />
               </Flex>
             </div>
-            <div className="flex-1 flex justify-center items-center text-[#fff] absolute bottom-[-10px] right-[252px]">
+            <div className="flex-1 flex justify-center items-center text-[#fff] absolute lg:bottom-[-10px] md:right-[252px] right-0 bottom-5">
               <img
-                className="w-[496px] h-[352px] "
+                className="lg:w-[496px] w-[200px] h-[200px] lg:h-[352px]"
                 src={Heroimage}
                 alt="Heroimage"
               />
             </div>
           </div>
-          <div className="bg-primaryColor w-full h-[344px] flex items-center relative overflow-hidden">
+          <div className="bg-primaryColor w-full h-[344px] flex items-center relative overflow-hidden gap-3 lg:gap-0">
             <div className="pt-[68px] pl-[64px] flex flex-col gap-5">
               <Flex className="items-center gap-7">
                 <FaApple className="text-Secondary w-[40px] h-[49px]" />
@@ -91,7 +92,7 @@ const Hero = () => {
                   iPhone 14 Series
                 </Text>
               </Flex>
-              <Title className="text-4xl font-semibold font-inter text-Secondary w-[294px] leading-[60px]">
+              <Title className="lg:text-4xl text-xl font-semibold font-inter text-Secondary leading-[60px]">
                 Up to 10%
                 <br />
                 off Voucher
@@ -103,15 +104,15 @@ const Hero = () => {
                 <GrLinkNext className="text-[24px] font-normal font-poppins text-[#fff]" />
               </Flex>
             </div>
-            <div className="flex-1 flex justify-center items-center text-[#fff] absolute bottom-[-10px] right-[252px]">
+            <div className="flex-1 flex justify-center items-center text-[#fff] absolute lg:bottom-[-10px] md:right-[252px] right-0 bottom-5">
               <img
-                className="w-[496px] h-[352px]"
+                className="lg:w-[496px] w-[200px] h-[200px] lg:h-[352px]"
                 src={Heroimage}
                 alt="Heroimage"
               />
             </div>
           </div>
-          <div className="bg-primaryColor w-full h-[344px] flex items-center relative overflow-hidden">
+          <div className="bg-primaryColor w-full h-[344px] flex items-center relative overflow-hidden gap-3 lg:gap-0">
             <div className="pt-[68px] pl-[64px] flex flex-col gap-5">
               <Flex className="items-center gap-7">
                 <FaApple className="text-Secondary w-[40px] h-[49px]" />
@@ -119,7 +120,7 @@ const Hero = () => {
                   iPhone 14 Series
                 </Text>
               </Flex>
-              <Title className="text-4xl font-semibold font-inter text-Secondary w-[294px] leading-[60px]">
+              <Title className="lg:text-4xl text-xl font-semibold font-inter text-Secondary leading-[60px]">
                 Up to 10%
                 <br />
                 off Voucher
@@ -131,15 +132,15 @@ const Hero = () => {
                 <GrLinkNext className="text-[24px] font-normal font-poppins text-[#fff]" />
               </Flex>
             </div>
-            <div className="flex-1 flex justify-center items-center text-[#fff] absolute bottom-[-10px] right-[252px]">
+            <div className="flex-1 flex justify-center items-center text-[#fff] absolute lg:bottom-[-10px] md:right-[252px] right-0 bottom-5">
               <img
-                className="w-[496px] h-[352px]"
+                className="lg:w-[496px] w-[200px] h-[200px] lg:h-[352px]"
                 src={Heroimage}
                 alt="Heroimage"
               />
             </div>
           </div>
-          <div className="bg-primaryColor w-full h-[344px] flex items-center relative overflow-hidden">
+          <div className="bg-primaryColor w-full h-[344px] flex items-center relative overflow-hidden gap-3 lg:gap-0">
             <div className="pt-[68px] pl-[64px] flex flex-col gap-5">
               <Flex className="items-center gap-7">
                 <FaApple className="text-Secondary w-[40px] h-[49px]" />
@@ -147,7 +148,7 @@ const Hero = () => {
                   iPhone 14 Series
                 </Text>
               </Flex>
-              <Title className="text-4xl font-semibold font-inter text-Secondary w-[294px] leading-[60px]">
+              <Title className="lg:text-4xl text-xl font-semibold font-inter text-Secondary leading-[60px]">
                 Up to 10%
                 <br />
                 off Voucher
@@ -159,9 +160,9 @@ const Hero = () => {
                 <GrLinkNext className="text-[24px] font-normal font-poppins text-[#fff]" />
               </Flex>
             </div>
-            <div className="flex-1 flex justify-center items-center text-[#fff] absolute bottom-[-10px] right-[252px]">
+            <div className="flex-1 flex justify-center items-center text-[#fff] absolute md:bottom-[-10px] md:right-[252px] right-0 bottom-5">
               <img
-                className="w-[496px] h-[352px]"
+                className="md:w-[496px] w-[200px] h-[200px] md:h-[352px]"
                 src={Heroimage}
                 alt="Heroimage"
               />
