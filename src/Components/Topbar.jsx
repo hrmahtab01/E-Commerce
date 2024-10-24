@@ -9,8 +9,8 @@ const Topbar = () => {
     <div className="bg-primaryColor w-full py-3 ">
       <Container>
         <Flex className="justify-between items-center my-auto lg:ml-[250px]">
-          <Flex className="">
-            <Text className="text-[12px] lg:text-base font-poppins font-normal text-Secondary">
+          <Flex className="gap-7 md:gap-0">
+            <Text className="text-[12px] md:text-base w-[250px] md:w-full font-poppins font-normal text-Secondary">
               Summer Sale For All Swim Suits And Free Express Delivery - OFF
               50%!
             </Text>

@@ -64,15 +64,39 @@ const PrevArrow = ({ onClick }) => (
 );
 
 const Categories = () => {
-  var settings = {
+  const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 7,
-    slidesToScroll: 6,
+    slidesToShow: 7, // default for small screens
+    slidesToScroll: 5,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
+  
   return (
     <div className="mt-[80px]">
       <Container>
@@ -83,13 +107,13 @@ const Categories = () => {
               Categories
             </Text>
           </Flex>
-          <Title className="text-[36px] font-semibold font-inter text-primaryColor mt-[24px]">
+          <Title className="lg:text-[36px] text-2xl font-semibold font-inter text-primaryColor mt-[24px]">
             Browse By Category
           </Title>
         </div>
-        <div className="pt-[60px] cateslick border-b">
+        <div className="pt-[60px] lg:cateslick smallcateslcik border-b">
           <Slider {...settings}>
-            <div className="w-[170px] h-[145px] bg-SecondarySecond  rounded-[4px] group hover:bg-ThirdColor duration-300">
+            <div className="md:w-[170px] h-[145px] w-[100px] bg-SecondarySecond  rounded-[4px] group hover:bg-ThirdColor duration-300">
               <div className="flex flex-col justify-center items-center">
                 <CiMobile4 className="text-[56px] text-primaryColor text-center mt-[25px] group-hover:text-Secondary duration-300" />
                 <Text className="text-base font-normal font-poppins text-primaryColor mt-[16px] group-hover:text-Secondary duration-300">
@@ -97,7 +121,7 @@ const Categories = () => {
                 </Text>
               </div>
             </div>
-            <div className="w-[170px] h-[145px] bg-SecondarySecond  rounded-[4px]  group hover:bg-ThirdColor duration-300">
+            <div className="md:w-[170px] h-[145px] w-[100px] bg-SecondarySecond  rounded-[4px]  group hover:bg-ThirdColor duration-300">
               <div className="flex flex-col justify-center items-center">
                 <HiOutlineComputerDesktop className="text-[56px] text-primaryColor text-center mt-[25px] group-hover:text-Secondary duration-300" />
                 <Text className="text-base font-normal font-poppins text-primaryColor mt-[16px] group-hover:text-Secondary duration-300">
@@ -105,7 +129,7 @@ const Categories = () => {
                 </Text>
               </div>
             </div>
-            <div className="w-[170px] h-[145px] bg-SecondarySecond  rounded-[4px] group hover:bg-ThirdColor duration-300">
+            <div className="md:w-[170px] h-[145px] w-[100px] bg-SecondarySecond  rounded-[4px] group hover:bg-ThirdColor duration-300">
               <div className="flex flex-col justify-center items-center">
                 <BsSmartwatch className="text-[56px] text-primaryColor text-center mt-[25px] group-hover:text-Secondary duration-300" />
                 <Text className="text-base font-normal font-poppins text-primaryColor mt-[16px] group-hover:text-Secondary duration-300">
@@ -113,7 +137,7 @@ const Categories = () => {
                 </Text>
               </div>
             </div>
-            <div className="w-[170px] h-[145px] bg-SecondarySecond  rounded-[4px] group  hover:bg-ThirdColor duration-300 ">
+            <div className="md:w-[170px] h-[145px] w-[100px] bg-SecondarySecond  rounded-[4px] group  hover:bg-ThirdColor duration-300 ">
               <div className="flex flex-col justify-center items-center">
                 <CiCamera className="text-[56px] text-primaryColor text-center mt-[25px] group-hover:text-Secondary duration-300" />
                 <Text className="text-base font-normal font-poppins text-primaryColor mt-[16px] group-hover:text-Secondary duration-300">
@@ -121,7 +145,7 @@ const Categories = () => {
                 </Text>
               </div>
             </div>
-            <div className="w-[170px] h-[145px] bg-SecondarySecond  rounded-[4px] group hover:bg-ThirdColor duration-300r">
+            <div className="md:w-[170px] h-[145px] w-[100px] bg-SecondarySecond  rounded-[4px] group hover:bg-ThirdColor duration-300r">
               <div className="flex flex-col justify-center items-center">
                 <CiHeadphones className="text-[56px] text-primaryColor text-center mt-[25px] group-hover:text-Secondary duration-300" />
                 <Text className="text-base font-normal font-poppins text-primaryColor mt-[16px] group-hover:text-Secondary duration-300">
@@ -129,7 +153,7 @@ const Categories = () => {
                 </Text>
               </div>
             </div>
-            <div className="w-[170px] h-[145px] bg-SecondarySecond  rounded-[4px] group hover:bg-ThirdColor duration-300">
+            <div className="md:w-[170px] h-[145px] w-[100px] bg-SecondarySecond  rounded-[4px] group hover:bg-ThirdColor duration-300">
               <div className="flex flex-col justify-center items-center">
                 <FaGamepad className="text-[56px] text-primaryColor text-center mt-[25px] group-hover:text-Secondary duration-300" />
                 <Text className="text-base font-normal font-poppins text-primaryColor mt-[16px] group-hover:text-Secondary duration-300">
@@ -137,7 +161,7 @@ const Categories = () => {
                 </Text>
               </div>
             </div>
-            <div className="w-[170px] h-[145px] bg-SecondarySecond  rounded-[4px] group hover:bg-ThirdColor duration-300">
+            <div className="md:w-[170px] h-[145px] w-[100px] bg-SecondarySecond  rounded-[4px] group hover:bg-ThirdColor duration-300">
               <div className="flex flex-col justify-center items-center">
                 <CiHeadphones className="text-[56px] text-primaryColor text-center mt-[25px] group-hover:text-Secondary duration-300" />
                 <Text className="text-base font-normal font-poppins text-primaryColor mt-[16px] group-hover:text-Secondary duration-300">
@@ -145,7 +169,7 @@ const Categories = () => {
                 </Text>
               </div>
             </div>
-            <div className="w-[170px] h-[145px] bg-SecondarySecond  rounded-[4px] group hover:bg-ThirdColor duration-300">
+            <div className="md:w-[170px] h-[145px] w-[100px] bg-SecondarySecond  rounded-[4px] group hover:bg-ThirdColor duration-300">
               <div className="flex flex-col justify-center items-center">
                 <CiCamera className="text-[56px] text-primaryColor text-center mt-[25px] group-hover:text-Secondary duration-300" />
                 <Text className="text-base font-normal font-poppins text-primaryColor mt-[16px] group-hover:text-Secondary duration-300">
@@ -156,7 +180,7 @@ const Categories = () => {
           </Slider>
         </div>
         <div className="w-full h-[500px] bg-primaryColor">
-          <div className="grid grid-cols-1 lg:grid-cols-2 relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 relative">
             <div className="py-[70px] pl-[56px]">
               <div>
                 <Text className="text-base font-semibold font-poppins text-[#00FF66] ">

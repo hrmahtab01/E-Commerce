@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <div className="pt-[80px] pb-[140px]">
       <Container>
-        <div className="flex gap-[30px]">
+        <div className="md:flex gap-[30px] grid grid-cols-1 ">
           <div className="w-[340px] h-[457px] rounded-[4px] shadow-sm shadow-primaryColor">
             <div className="py-[40px] px-[35px]">
               <div className="pb-[32px] border-b border-primaryColor">
@@ -48,9 +48,9 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <div className="w-[800px] h-[457px] shadow-sm shadow-primaryColor rounded-[4px]">
+          <div className="md:w-[800px] md:h-[457px] w-full h-full shadow-sm shadow-primaryColor rounded-[4px]">
             <div className="py-[40px] px-[32px]">
-              <div className="flex gap-4">
+              <div className="md:flex gap-4 grid grid-cols-1">
                 <div className="relative">
                   <input
                     className="w-[235px] h-[50px] bg-Secondary rounded-[4px] pl-4 placeholder:text-base placeholder:text-primaryColor/50 placeholder:font-normal placeholder:font-poppins"
@@ -79,18 +79,18 @@ const Contact = () => {
                   </label>
                 </div>
               </div>
-              <div className="w-[737px] h-[207px]  mt-[32px] relative ">
+              <div className="md:w-[737px] md:h-[207px] w-[320px] h-[70px]  mt-[32px] relative ">
                 <input
-                  className=" w-full h-full bg-Secondary rounded-[4px] pb-[163px] pl-[16px] text-base text-primaryColor font-medium font-poppins"
+                  className=" w-full h-full bg-Secondary rounded-[4px] pb-[163px] pl-[16px] py-5 md:py-0 text-base text-primaryColor font-medium font-poppins"
                   type="text"
                 />
                 <label className="absolute top-[13px] left-[16px] text-base text-primaryColor/50 font-normal font-poppins">
                   Your Massage
                 </label>
               </div>
-              <div className="mt-[32px] flex justify-end">
+              <div className="mt-[32px] flex md:justify-end justify-center">
 
-              <button className="py-[16px] px-[48px] bg-ThirdColor  rounded-[4px] text-base text-[#fff]  font-medium font-poppins">Send Massage</button>
+              <button className="py-[16px] px-[48px] mt-[200px] md:mt-0 bg-ThirdColor  rounded-[4px] text-base text-[#fff]  font-medium font-poppins">Send Massage</button>
               </div>
             </div>
           </div>

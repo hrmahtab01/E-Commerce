@@ -45,6 +45,9 @@
 .cateslick .slick-slide {
   margin: 0 20px;
 }
+.smallcateslcik .slick-slide {
+  margin: 0 5px;
+}
 
 .teamslick .slick-dots li button::before {
   color: #0000 !important;
