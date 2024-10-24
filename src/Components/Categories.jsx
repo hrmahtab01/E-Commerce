@@ -162,11 +162,11 @@ const Categories = () => {
                 <Text className="text-base font-semibold font-poppins text-[#00FF66] ">
                   Categories
                 </Text>
-                <Title className="text-5xl font-semibold font-inter text-Secondary  leading-[60px] mt-[32px] tracking-wider">
+                <Title className=" text-3xl lg:text-5xl font-semibold font-inter text-Secondary  leading-[60px] mt-[32px] tracking-wider">
                   Enhance Your <br /> Music Experience
                 </Title>
               </div>
-              <div className="flex gap-6 mt-[32px]">
+              <div className="flex lg:gap-6 gap-4 mt-[32px]">
                 <div className="w-[62px] h-[62px] bg-Secondary rounded-full flex flex-col justify-center items-center">
                   <Text className="text-base text-primaryColor font-poppins font-semibold">
                     48
@@ -208,7 +208,7 @@ const Categories = () => {
               <div className="bg-[#D9D9D9]/30 w-[500px] h-[500px] rounded-full blur-[50px] z-0 "></div>
             </div>
             <img
-              className=" absolute top-0  w-[600px]  h-[420px] right-[60px] rotate-y-[-180deg] z-[999]"
+              className=" hidden lg:block absolute top-0  w-[600px]  h-[420px] right-[60px] rotate-y-[-180deg] z-[999]"
               src={InhancheImg}
               alt=""
             />

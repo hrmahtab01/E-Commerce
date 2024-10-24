@@ -13,7 +13,7 @@ const Delivery = () => {
   return (
     <div className={`mt-[80px]  ${Location.pathname == '/About' ? "mb-[80px]" : 'mb-[153px]'}`}>
       <Container>
-        <div className="px-[113px] grid grid-cols-1 lg:grid-cols-3 ">
+        <div className="px-[113px] grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-0">
           <div className="flex flex-col justify-center items-center">
             <div className="w-[80px] h-[80px] rounded-full bg-[#2F2E30]/30 flex justify-center items-center">
               <div className="w-[58px] h-[57px] rounded-full bg-primaryColor  flex justify-center items-center ">

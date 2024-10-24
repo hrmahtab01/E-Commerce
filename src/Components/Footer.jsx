@@ -17,22 +17,22 @@ import { FaCopyright } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
-      <div className="py-[80px] bg-primaryColor border-b border-Secondary/30">
+      <div className="lg:py-[80px] py-[40px] bg-primaryColor border-b border-Secondary/30 px-3 lg:px-0 ">
         <Container>
-          <Flex className="gap-[87px]">
+          <div className="gap-[87px] grid grid-cols-2 lg:flex ">
             <div>
-              <Title className="text-[24px] text-Secondary font-bold font-inter leading-loose tracking-wider">
+              <Title className=" text-xl lg:text-[24px] text-Secondary font-bold font-inter leading-loose tracking-wider">
                 Exclusive
               </Title>
-              <Text className="text-xl text-Secondary font-medium font-poppins mt-6">
+              <Text className=" text-base lg:text-xl text-Secondary font-medium font-poppins mt-6">
                 Subscribe
               </Text>
-              <Text className="text-base text-Secondary font-normal font-poppins leading-[24px] mt-6">
+              <Text className="text-[12px] text-base text-Secondary font-normal font-poppins leading-[24px] lg:mt-6 mt-3">
                 Get 10% off your first order
               </Text>
-              <div className="w-[217px] h-[48px] relative mt-7  ">
+              <div className="w-[217px]  h-[48px] relative mt-7  ">
                 <Input
-                  className=" w-full h-full rounded-[4px] border pl-[15px] bg-primaryColor border-Secondary placeholder:text-base placeholder:text-Secondary/40 placeholder:font-normal placeholder:font-poppins placeholder:leading-relaxed text-Secondary text-base font-normal font-poppins"
+                  className=" w-full h-full rounded-[4px] border pl-[15px] bg-primaryColor border-Secondary lg:placeholder:text-base placeholder:text-Secondary/40 placeholder:font-normal placeholder:font-poppins placeholder:leading-relaxed text-Secondary text-base font-normal font-poppins"
                   placeholder="Enter your email"
                   type="email"
                 />
@@ -107,7 +107,7 @@ const Footer = () => {
                   src={Qscanerimage}
                   alt="Qscanerimage"
                 />
-                <div>
+                <div className="">
                   <img
                     className="w-[110px] h-[40px]"
                     src={Playstore}
@@ -135,14 +135,16 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-          </Flex>
+          </div>
         </Container>
       </div>
       <div className="pt-[16px] pb-[24px] bg-primaryColor w-full">
         <Container>
           <div className="flex justify-center items-center gap-2">
             <FaCopyright className="text-xl text-[#fff]" />
-            <Text className="text-base text-[#fff] font-medium font-inter">Copyright mahtab 2024. All right reserved</Text>
+            <Text className="text-base text-[#fff] font-medium font-inter">
+              Copyright mahtab 2024. All right reserved
+            </Text>
           </div>
         </Container>
       </div>

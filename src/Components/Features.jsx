@@ -31,7 +31,7 @@ const Features = () => {
             Features Products
           </Title>
         </div>
-        <div className=" grid grid-cols-1 lg:grid-cols-4 mt-[40px] gap-[30px] ">
+        <div className=" grid grid-cols-1 lg:grid-cols-4 mt-[40px] gap-[30px] place-items-center ">
           <div>
             <div className="w-[270px] h-[250px] bg-SecondarySecond flex justify-center items-center rounded-[4px] relative group ">
               <img
