@@ -21,7 +21,7 @@ const Checkout = () => {
             Accout / My account / Product / View cart /{" "}
             <span className="text-primaryColor">CheckOut</span>{" "}
           </Text>
-          <Flex className="mt-[80px] gap-[173px]">
+          <Flex className="mt-[80px] gap-[173px] md:flex grid grid-cols-1">
             <div>
               <Title className="text-4xl text-primaryColor font-medium font-inter leading-[31px]">
                 Billing Details
@@ -200,7 +200,7 @@ const Checkout = () => {
                     Cash on delivery
                   </Text>
                 </div>
-                <div className="flex gap-4 mt-[32px]">
+                <div className="md:flex gap-4 mt-[32px] grid grid-cols-1">
                   <input
                     className="w-[300px] h-[56px] border border-primaryColor rounded-[4px] outline-none placeholder:text-base placeholder:text-primaryColor/40  placeholder:font-normal placeholder:font-poppins pl-6 text-base text-primaryColor font-normal font-poppins"
                     type="text"

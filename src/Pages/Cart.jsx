@@ -19,7 +19,7 @@ const Cart = () => {
             Home / <span className="text-primaryColor">Cart</span>
           </Text>
           <div className="mt-[80px] flex flex-col gap-10">
-            <Flex className="py-[24px] bg-[#fff] shadow-sm shadow-primaryColor rounded-[4px] px-[40px] gap-[284px]">
+            <Flex className="py-[24px] bg-[#fff] shadow-sm shadow-primaryColor rounded-[4px] md:px-[40px] px-10 md:gap-[284px] gap-6">
               <Text className="text-base text-primaryColor font-normal font-poppins leading-[24px]">
                 Product
               </Text>
@@ -35,7 +35,7 @@ const Cart = () => {
             </Flex>
             {/* {'product part'} */}
 
-            <Flex className="py-[24px] bg-[#fff] shadow-sm shadow-primaryColor rounded-[4px] px-[40px] gap-11 items-center">
+            <Flex className="py-[24px] bg-[#fff] shadow-sm shadow-primaryColor rounded-[4px] md:px-[40px] px-10 md:gap-11 items-center">
               <Flex className="items-center gap-5 ">
                 <div className="w-[54px] h-[54px] relative ">
                   <img src={monitorImage} alt="monitorImage" />
@@ -47,10 +47,10 @@ const Cart = () => {
                   LCD Monitor
                 </Text>
               </Flex>
-              <Text className="text-base text-primaryColor font-normal font-poppins leading-[24px] mr-[250px] ml-[130px]">
+              <Text className="text-base text-primaryColor font-normal font-poppins leading-[24px] md:mr-[250px] mr-5 ml-5 md:ml-[130px]">
                 $650
               </Text>
-              <div className="w-[72px] h-[44px] border border-primaryColor/40 rounded-[4px] flex items-center justify-center gap-[6px] mr-[250px] ">
+              <div className="w-[72px] h-[44px] border border-primaryColor/40 rounded-[4px] flex items-center justify-center gap-[6px] md:mr-[250px] mr-5 ">
                 <Text className="text-base text-primaryColor font-normal font-poppins">
                   01
                 </Text>
@@ -63,8 +63,8 @@ const Cart = () => {
                 $650
               </Text>
             </Flex>
-            <Flex className="py-[24px] bg-[#fff] shadow-sm shadow-primaryColor rounded-[4px] px-[40px] gap-11 items-center">
-              <Flex className="items-center gap-5 ">
+            <Flex className="py-[24px] bg-[#fff] shadow-sm shadow-primaryColor rounded-[4px] md:px-[40px] px-10  md:gap-11  items-center">
+              <Flex className="items-center md:gap-5 gap-2 ">
                 <div className="w-[54px] h-[54px] relative ">
                   <img src={GamingImage} alt="GamingImage" />
                 </div>
@@ -72,10 +72,10 @@ const Cart = () => {
                   H1 Gamepad
                 </Text>
               </Flex>
-              <Text className="text-base text-primaryColor font-normal font-poppins leading-[24px] mr-[250px] ml-[120px]">
+              <Text className="text-base text-primaryColor font-normal font-poppins leading-[24px] md:mr-[250px] mr-5 md:ml-[120px] ml-5">
                 $550
               </Text>
-              <div className="w-[72px] h-[44px] border border-primaryColor/40 rounded-[4px] flex items-center justify-center gap-[6px] mr-[250px] ">
+              <div className="w-[72px] h-[44px] border border-primaryColor/40 rounded-[4px] flex items-center justify-center gap-[6px] md:mr-[250px] mr-5 ">
                 <Text className="text-base text-primaryColor font-normal font-poppins">
                   02
                 </Text>
@@ -89,8 +89,8 @@ const Cart = () => {
               </Text>
             </Flex>
           </div>
-          <div className="mt-[80px] flex  gap-[173px]">
-            <div className="flex gap-4">
+          <div className="mt-[80px] md:flex  md:gap-[173px] grid grid-cols-1 space-y-10 ">
+            <div className="md:flex gap-4 grid grid-cols-1 place-items-center">
               <input
                 className="w-[300px] h-[56px] border border-primaryColor rounded-[4px] outline-none placeholder:text-base placeholder:text-primaryColor/40  placeholder:font-normal placeholder:font-poppins pl-6 text-base text-primaryColor font-normal font-poppins"
                 type="text"
@@ -100,7 +100,7 @@ const Cart = () => {
                 Apply Coupon
               </CommonBtn>
             </div>
-            <div className="w-[470px] h-[320px] rounded-[4px] border-[2px] border-primaryColor">
+            <div className="md:w-[470px] h-[320px] rounded-[4px] border-[2px] border-primaryColor mx-5">
               <div className="py-[24px] px-[32px]">
                 <Title className="text-xl text-primaryColor font-medium font-poppins leading-[28px]">
                   Cart Total

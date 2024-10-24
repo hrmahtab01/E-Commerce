@@ -33,7 +33,7 @@ const Product = () => {
                 </div>
               ))}
             </div>
-            <div className="flex-1 bg-Secondary rounded-md flex justify-center items-center h-96">
+            <div className="flex-1 bg-Secondary rounded-md flex justify-center items-center h-96 md:mt-28 ">
               <img className="object-contain" src={productMainimage} alt="Main Product" />
             </div>
           </div>
