@@ -9,9 +9,9 @@ import { Link } from "react-router-dom";
 const Signup = () => {
   return (
     <div className="mt-[60px] mb-[140px]">
-      <div className="flex gap-[129px] ">
+      <div className="md:flex md:gap-[129px] grid grid-cols-1 ">
         <img
-          className="w-[919px] h-[781px] xl:w-[1030px] "
+          className="md:w-[919px] md:h-[781px] xl:w-[1030px] "
           src={SideImage}
           alt=""
         />

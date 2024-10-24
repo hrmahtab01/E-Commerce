@@ -8,13 +8,13 @@ const Login = () => {
   return (
     <div className="mt-[60px] mb-[140px]">
       <div className="">
-        <div className="flex gap-[129px] ">
+        <div className="md:flex md:gap-[129px] grid grid-cols-1 ">
           <img
-            className="w-[919px] h-[781px] xl:w-[1030px] "
+            className="md:w-[919px] md:h-[781px] xl:w-[1030px] "
             src={SideImage}
             alt=""
           />
-          <div className="flex flex-col justify-center   items-center">
+          <div className="flex flex-col justify-center mt-10 md:mt-0  items-center">
             <div className="w-[371px] ">
               <Title className="text-[36px] text-primaryColor font-medium font-inter leading-[30px] tracking-wider">
                 Log in to Exclusive
@@ -22,14 +22,14 @@ const Login = () => {
               <Text className="text-base text-primaryColor font-normal font-poppins leading-[24px] mt-[24px]">
                 Enter your details below
               </Text>
-              <div className=" w-[371px] h-[32px] mt-[48px]">
+              <div className=" md;w-[371px] h-[32px] w-full mt-[48px]">
                 <input
                   className="w-full h-full border-b outline-none placeholder:text-base placeholder:text-primaryColor/40 placeholder:font-normal placeholder:font-poppins text-base text-primaryColor font-normal font-poppins"
                   type="email"
                   placeholder="Email or Phone Number"
                 />
               </div>
-              <div className=" w-[371px] h-[32px] mt-[48px]">
+              <div className=" md:w-[371px] w-full h-[32px] mt-[48px]">
                 <input
                   className="w-full h-full border-b outline-none placeholder:text-base placeholder:text-primaryColor/40 placeholder:font-normal placeholder:font-poppins text-base text-primaryColor font-normal font-poppins"
                   type="password"
