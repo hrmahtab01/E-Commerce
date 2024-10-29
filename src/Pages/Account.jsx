@@ -2,8 +2,13 @@ import React from 'react';
 import Container from '../Components/Common/Container';
 import Text from '../Components/Common/Text';
 import Title from '../Components/Common/Title';
+import { useSelector } from 'react-redux';
 
 const Account = () => {
+ const data =useSelector((state )=>state.userinfo.value)
+ console.log(data);
+ 
+  
   return (
     <div className='pt-20 pb-36'>
       <Container>
@@ -13,7 +18,7 @@ const Account = () => {
               Home / <span className='text-primaryColor'>My Account</span>
             </Text>
             <Text className="text-sm text-primaryColor/50 font-normal leading-6">
-              Welcome! <span className='text-ThirdColor'>Md Rimel</span>
+              Welcome! <span className='text-ThirdColor'>{data?.name}</span>
             </Text>
           </div>
           <div className='mt-20 flex flex-col md:flex-row md:gap-32'>

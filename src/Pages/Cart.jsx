@@ -48,7 +48,7 @@ const Cart = () => {
   };
   let Handlecoupondata = (e) => {
     Setcoupon(e.target.value);
-    Setcouponrr('')
+    Setcouponrr("");
   };
   let HandleSubmitcoupon = () => {
     if (!coupon) {
@@ -56,7 +56,6 @@ const Cart = () => {
     }
     if (coupon) {
       console.log("your code is success");
-      
     }
   };
   return (

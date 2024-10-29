@@ -7,6 +7,8 @@ import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import { IoEye } from "react-icons/io5";
 import { IoMdEyeOff } from "react-icons/io";
+import { useDispatch } from "react-redux";
+import { userdata } from "../Slice/UserSlice";
 
 const Signup = () => {
   const [name, Setname] = useState("");
@@ -16,6 +18,7 @@ const Signup = () => {
   const [emailrr, Setemailrr] = useState("");
   const [passwordrr, Setpasswordrr] = useState("");
   const [showpass, Setshowpass] = useState(false);
+  const dispatch = useDispatch();
 
   let HandleNamevalue = (e) => {
     Setname(e.target.value);
@@ -39,6 +42,9 @@ const Signup = () => {
     }
     if (!password) {
       Setpasswordrr("password is require");
+    }
+    if (name && email && password) {
+      dispatch(userdata(name));
     }
   };
   let Handleshowpassword = () => {
