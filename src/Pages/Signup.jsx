@@ -5,6 +5,8 @@ import Text from "../Components/Common/Text";
 import CommonBtn from "../Components/Common/CommonBtn";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { IoEye } from "react-icons/io5";
+import { IoMdEyeOff } from "react-icons/io";
 
 const Signup = () => {
   const [name, Setname] = useState("");
@@ -13,6 +15,7 @@ const Signup = () => {
   const [namerr, Setnamerr] = useState("");
   const [emailrr, Setemailrr] = useState("");
   const [passwordrr, Setpasswordrr] = useState("");
+  const [showpass, Setshowpass] = useState(false);
 
   let HandleNamevalue = (e) => {
     Setname(e.target.value);
@@ -37,6 +40,9 @@ const Signup = () => {
     if (!password) {
       Setpasswordrr("password is require");
     }
+  };
+  let Handleshowpassword = () => {
+    Setshowpass(!showpass);
   };
 
   return (
@@ -86,16 +92,22 @@ const Signup = () => {
               </p>
             )}
           </div>
-          <div className=" w-[371px] h-[32px] mt-[48px]">
+          <div className=" w-[371px] h-[32px] mt-[48px] relative">
             <input
               onChange={Handlepasswordvalue}
               value={password}
               className={`w-full h-full border-b ${
                 passwordrr ? " border-red-500" : "border-black/30"
               } outline-none placeholder:text-base placeholder:text-primaryColor/40 placeholder:font-normal placeholder:font-poppins text-base text-primaryColor font-normal font-poppins`}
-              type="password"
+              type={`${showpass ? "text" : "password"}`}
               placeholder="Password"
             />
+            <button
+              onClick={Handleshowpassword}
+              className="absolute top-[50%] translate-y-[-50%] right-5"
+            >
+              {showpass ? <IoEye /> : <IoMdEyeOff />}
+            </button>
             {passwordrr && (
               <p className="text-[14px] font-medium font-poppins text-red-500">
                 {passwordrr}

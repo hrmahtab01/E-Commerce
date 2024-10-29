@@ -106,6 +106,16 @@ const Navbar = () => {
             <Title className="text-[16px] font-bold font-inter text-primaryColor">
               Exclusive
             </Title>
+            <Flex className="w-[143px] h-[38px] relative">
+              <Input
+                onchange={handlechangeinput}
+                value={srcvalue}
+                className="w-full h-full bg-SecondarySecond rounded-[4px] text-[14px] font-poppins font-semibold text-[#000000] placeholder:text-[12px] placeholder:font-poppins placeholder:text-[#000]/50 placeholder:font-normal pl-[20px] pr-[40px]"
+                placeholder="What are you looking for?"
+                type="text"
+              />
+              <CiSearch onClick={handleSrcsubmit} className="absolute bottom-[7px] right-[12px] text-[24px] text-[#000]" />
+            </Flex>
             <button onClick={() => setMenuBar(!menuBar)}>
               {menuBar ? (
                 <RxCross2 className="text-[24px]" />
