@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "../Components/Common/Container";
 import Text from "../Components/Common/Text";
 import Flex from "../Components/Common/Flex";
@@ -11,6 +11,54 @@ import CommonBtn from "../Components/Common/CommonBtn";
 import Title from "../Components/Common/Title";
 
 const Cart = () => {
+  const [increament, Setincrement] = useState(1);
+  const [gameincremnt, Setgameincrement] = useState(2);
+  const [oneprice, Setoneprice] = useState(650);
+  const [twoprice, Settwoprice] = useState(550);
+  const [coupon, Setcoupon] = useState("");
+  const [couponrr, Setcouponrr] = useState("");
+
+  let Handleincreament = () => {
+    Setincrement((prev) => prev + 1);
+
+    if (increament > 0) {
+      Setoneprice(increament * oneprice);
+    }
+  };
+  let handledcrement = () => {
+    if (increament > 1) {
+      Setincrement((prev) => prev - 1);
+    }
+  };
+  let Handlegameincrement = () => {
+    Setgameincrement((prev) => prev + 1);
+  };
+  let Handlegamedecrement = () => {
+    if (gameincremnt > 1) {
+      Setgameincrement((prev) => prev - 1);
+    }
+  };
+
+  const monitor = increament * oneprice;
+  const gamepad = gameincremnt * twoprice;
+  const totalprice = monitor + gamepad;
+
+  let Handleproccess = () => {
+    console.log("your proccess success");
+  };
+  let Handlecoupondata = (e) => {
+    Setcoupon(e.target.value);
+    Setcouponrr('')
+  };
+  let HandleSubmitcoupon = () => {
+    if (!coupon) {
+      Setcouponrr("type your code");
+    }
+    if (coupon) {
+      console.log("your code is success");
+      
+    }
+  };
   return (
     <div className="pt-[80px] pb-[220px]">
       <Container>
@@ -52,15 +100,21 @@ const Cart = () => {
               </Text>
               <div className="w-[72px] h-[44px] border border-primaryColor/40 rounded-[4px] flex items-center justify-center gap-[6px] md:mr-[250px] mr-5 ">
                 <Text className="text-base text-primaryColor font-normal font-poppins">
-                  01
+                  {increament}
                 </Text>
                 <Flex className="flex flex-col">
-                  <GrFormPrevious className="rotate-90 text-base" />
-                  <GrFormNext className="rotate-90 text-base" />
+                  <GrFormPrevious
+                    onClick={Handleincreament}
+                    className="rotate-90 text-base"
+                  />
+                  <GrFormNext
+                    onClick={handledcrement}
+                    className="rotate-90 text-base"
+                  />
                 </Flex>
               </div>
               <Text className="text-base text-primaryColor font-normal font-poppins leading-[24px] ">
-                $650
+                {monitor}
               </Text>
             </Flex>
             <Flex className="py-[24px] bg-[#fff] shadow-sm shadow-primaryColor rounded-[4px] md:px-[40px] px-10  md:gap-11  items-center">
@@ -77,26 +131,40 @@ const Cart = () => {
               </Text>
               <div className="w-[72px] h-[44px] border border-primaryColor/40 rounded-[4px] flex items-center justify-center gap-[6px] md:mr-[250px] mr-5 ">
                 <Text className="text-base text-primaryColor font-normal font-poppins">
-                  02
+                  {gameincremnt}
                 </Text>
                 <Flex className="flex flex-col">
-                  <GrFormPrevious className="rotate-90 text-base" />
-                  <GrFormNext className="rotate-90 text-base" />
+                  <GrFormPrevious
+                    onClick={Handlegameincrement}
+                    className="rotate-90 text-base"
+                  />
+                  <GrFormNext
+                    onClick={Handlegamedecrement}
+                    className="rotate-90 text-base"
+                  />
                 </Flex>
               </div>
               <Text className="text-base text-primaryColor font-normal font-poppins leading-[24px] ">
-                $1100
+                {gamepad}
               </Text>
             </Flex>
           </div>
           <div className="mt-[80px] md:flex  md:gap-[173px] grid grid-cols-1 space-y-10 ">
             <div className="md:flex gap-4 grid grid-cols-1 place-items-center">
               <input
-                className="w-[300px] h-[56px] border border-primaryColor rounded-[4px] outline-none placeholder:text-base placeholder:text-primaryColor/40  placeholder:font-normal placeholder:font-poppins pl-6 text-base text-primaryColor font-normal font-poppins"
+                onChange={Handlecoupondata}
+                value={coupon}
+                className={`w-[300px] h-[56px] relative border ${
+                  couponrr ? "border-red-500" : "border-primaryColor"
+                }  rounded-[4px] outline-none placeholder:text-base placeholder:text-primaryColor/40  placeholder:font-normal placeholder:font-poppins pl-6 text-base text-primaryColor font-normal font-poppins`}
                 type="text"
                 placeholder="Coupon Code"
               />
-              <CommonBtn classname="w-[211px] h-[56px] bg-ThirdColor text-base text-Secondary font-medium font-poppins rounded-[4px]">
+
+              <CommonBtn
+                onClick={HandleSubmitcoupon}
+                classname="w-[211px] h-[56px] bg-ThirdColor text-base text-Secondary font-medium font-poppins rounded-[4px]"
+              >
                 Apply Coupon
               </CommonBtn>
             </div>
@@ -110,7 +178,7 @@ const Cart = () => {
                     Subtotal:
                   </Text>
                   <Text className="text-base  text-primaryColor font-normal font-poppins">
-                    $1750
+                    {totalprice}
                   </Text>
                 </div>
                 <div className="flex justify-between border-b pt-[16px] pb-[16px] border-primaryColor">
@@ -126,11 +194,14 @@ const Cart = () => {
                     Total:
                   </Text>
                   <Text className="text-base  text-primaryColor font-normal font-poppins">
-                    $1750
+                    {totalprice}
                   </Text>
                 </div>
                 <Flex className="justify-center">
-                  <button className="py-[16px] px-[48px] bg-ThirdColor rounded-[4px] text-base text-Secondary font-medium font-poppins">
+                  <button
+                    onClick={Handleproccess}
+                    className="py-[16px] px-[48px] bg-ThirdColor rounded-[4px] text-base text-Secondary font-medium font-poppins"
+                  >
                     Procees to checkout
                   </button>
                 </Flex>

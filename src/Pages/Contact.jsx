@@ -45,6 +45,10 @@ const Contact = () => {
     if (!message) {
       Setmessagerr("type your message")
     }
+    if (name && email && phone && message ) {
+      console.log("success your message");
+      
+    }
   }
   return (
     <div className="pt-[80px] pb-[140px]">
