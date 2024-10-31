@@ -12,7 +12,11 @@ import MastercardImage from "../assets/Mastercard.png";
 import Visaimage from "../assets/Visa.png";
 import CommonBtn from "../Components/Common/CommonBtn";
 
+
 const Checkout = () => {
+
+  
+  
   return (
     <div className="pt-[80px] pb-[140px]">
       <Container>

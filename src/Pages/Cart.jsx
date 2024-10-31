@@ -20,10 +20,6 @@ const Cart = () => {
 
   let Handleincreament = () => {
     Setincrement((prev) => prev + 1);
-
-    if (increament > 0) {
-      Setoneprice(increament * oneprice);
-    }
   };
   let handledcrement = () => {
     if (increament > 1) {

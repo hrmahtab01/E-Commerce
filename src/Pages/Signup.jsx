@@ -44,7 +44,8 @@ const Signup = () => {
       Setpasswordrr("password is require");
     }
     if (name && email && password) {
-      dispatch(userdata(name));
+      dispatch(userdata(name))
+      localStorage.setItem("user", JSON.stringify(name));
     }
   };
   let Handleshowpassword = () => {
