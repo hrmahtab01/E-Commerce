@@ -3,24 +3,26 @@ import Container from "../Components/Common/Container";
 import Text from "../Components/Common/Text";
 import Title from "../Components/Common/Title";
 import { useSelector } from "react-redux";
+import { setupListeners } from "@reduxjs/toolkit/query";
 
 const Account = () => {
   const data = useSelector((state) => state.userinfo.value);
-  const [firstname , setfirstname]=useState("")
-  const [secondname , setsecondname]=useState("")
-  const [email , Setemail]=useState("")
-  const [address ,Setaddress]=useState('')
-  const [currentpass , Setcurrentpass]=useState('')
-  const [newpass , Setnewpass]=useState('')
-  const [confirmpass ,Setconfirmpass]=useState('')
+  const [firstname, setfirstname] = useState("");
+  const [secondname, setsecondname] = useState("");
+  const [email, Setemail] = useState("");
+  const [address, Setaddress] = useState("");
+  const [currentpass, Setcurrentpass] = useState("");
+  const [newpass, Setnewpass] = useState("");
+  const [confirmpass, Setconfirmpass] = useState("");
 
-
-  let Handleupdatesave =()=>{
-
-  }
-let Handleupdatecancel =()=>{
-  
-}
+  let Handleupdatesave = () => {
+    console.log("save your changes");
+    
+  };
+  let Handleupdatecancel = () => {
+    console.log("cancel your changes");
+    
+  };
   return (
     <div className="pt-20 pb-36">
       <Container>
@@ -30,7 +32,7 @@ let Handleupdatecancel =()=>{
               Home / <span className="text-primaryColor">My Account</span>
             </Text>
             <Text className="text-sm text-primaryColor/50 font-normal leading-6">
-              Welcome! <span className="text-ThirdColor">{data}</span>
+              Welcome! <span className="text-ThirdColor">{data?.name}</span>
             </Text>
           </div>
           <div className="mt-20 flex flex-col md:flex-row md:gap-32">
@@ -53,9 +55,10 @@ let Handleupdatecancel =()=>{
                       First Name
                     </Text>
                     <input
+                      onChange={(e) => setfirstname(e.target.value)}
                       className="w-full md:w-80 h-12 bg-SecondarySecond pl-4 mt-2 text-base text-primaryColor/50 font-normal outline-none rounded"
                       type="text"
-                      value="Md"
+                      value={firstname}
                     />
                   </div>
                   <div className="mt-4">
@@ -63,9 +66,10 @@ let Handleupdatecancel =()=>{
                       Last Name
                     </Text>
                     <input
+                      onChange={(e) => setsecondname(e.target.value)}
                       className="w-full md:w-80 h-12 bg-SecondarySecond pl-4 mt-2 text-base text-primaryColor/50 font-normal outline-none rounded"
                       type="text"
-                      value="Rimel"
+                      value={secondname}
                     />
                   </div>
                 </div>
@@ -75,9 +79,10 @@ let Handleupdatecancel =()=>{
                       Email
                     </Text>
                     <input
+                      onChange={(e) => Setemail(e.target.value)}
                       className="w-full md:w-80 h-12 bg-SecondarySecond pl-4 mt-2 text-base text-primaryColor/50 font-normal outline-none rounded"
                       type="email"
-                      value="rimel1111@gmail.com"
+                      value={email}
                     />
                   </div>
                   <div className="mt-6">
@@ -85,9 +90,10 @@ let Handleupdatecancel =()=>{
                       Address
                     </Text>
                     <input
+                      onChange={(e) => Setaddress(e.target.value)}
                       className="w-full md:w-80 h-12 bg-SecondarySecond pl-4 mt-2 text-base text-primaryColor/50 font-normal outline-none rounded"
                       type="text"
-                      value="Kingston, 5236, United States"
+                      value={address}
                     />
                   </div>
                 </div>
@@ -96,24 +102,38 @@ let Handleupdatecancel =()=>{
                     Password Changes
                   </Text>
                   <input
+                    onChange={(e) => Setcurrentpass(e.target.value)}
                     className="w-full h-12 bg-SecondarySecond pl-4 mt-4 text-base text-primaryColor/50 font-normal outline-none rounded"
                     type="password"
                     placeholder="Current Password"
+                    value={currentpass}
                   />
                   <input
+                    onChange={(e) => Setnewpass(e.target.value)}
                     className="w-full h-12 bg-SecondarySecond pl-4 mt-4 text-base text-primaryColor/50 font-normal outline-none rounded"
                     type="password"
                     placeholder="New Password"
+                    value={newpass}
                   />
                   <input
+                    onChange={(e) => Setconfirmpass(e.target.value)}
                     className="w-full h-12 bg-SecondarySecond pl-4 mt-4 text-base text-primaryColor/50 font-normal outline-none rounded"
                     type="password"
                     placeholder="Confirm New Password"
+                    value={confirmpass}
                   />
                 </div>
                 <div className="flex justify-end items-center gap-8 mt-6">
-                  <button onClick={Handleupdatecancel} className="cursor-pointer text-primaryColor">Cancel</button>
-                  <button onClick={Handleupdatesave} className="text-base py-2 px-6 text-Secondary bg-ThirdColor rounded">
+                  <button
+                    onClick={Handleupdatecancel}
+                    className="cursor-pointer text-primaryColor"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={Handleupdatesave}
+                    className="text-base py-2 px-6 text-Secondary bg-ThirdColor rounded"
+                  >
                     Save Changes
                   </button>
                 </div>

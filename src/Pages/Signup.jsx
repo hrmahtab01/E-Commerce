@@ -4,7 +4,7 @@ import Title from "../Components/Common/Title";
 import Text from "../Components/Common/Text";
 import CommonBtn from "../Components/Common/CommonBtn";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { IoEye } from "react-icons/io5";
 import { IoMdEyeOff } from "react-icons/io";
 import { useDispatch } from "react-redux";
@@ -19,6 +19,7 @@ const Signup = () => {
   const [passwordrr, Setpasswordrr] = useState("");
   const [showpass, Setshowpass] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   let HandleNamevalue = (e) => {
     Setname(e.target.value);
@@ -44,8 +45,22 @@ const Signup = () => {
       Setpasswordrr("password is require");
     }
     if (name && email && password) {
-      dispatch(userdata(name))
-      localStorage.setItem("user", JSON.stringify(name));
+      dispatch(
+        userdata({
+          name: name,
+          email: email,
+          password: password,
+        })
+      );
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          name: name,
+          email: email,
+          password: password,
+        })
+      );
+      navigate("/Login");
     }
   };
   let Handleshowpassword = () => {
