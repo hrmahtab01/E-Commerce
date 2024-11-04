@@ -15,11 +15,7 @@ import { FaGamepad } from "react-icons/fa6";
 import { GrFormPrevious } from "react-icons/gr";
 import { MdNavigateNext } from "react-icons/md";
 import InhancheImg from "../assets/inhance.png";
-import Bgimage from "../assets/bgimage.png";
 import CommonBtn from "./Common/CommonBtn";
-import React, { Component } from "react";
-
-import FlipCountdown from "@rumess/react-flip-countdown";
 
 const NextArrow = ({ onClick }) => (
   <button
@@ -96,7 +92,7 @@ const Categories = () => {
       },
     ],
   };
-  
+
   return (
     <div className="mt-[80px]">
       <Container>
@@ -217,7 +213,7 @@ const Categories = () => {
                 </div>
                 <div className="w-[62px] h-[62px] bg-Secondary rounded-full flex flex-col justify-center items-center">
                   <Text className="text-base text-primaryColor font-poppins font-semibold">
-                   22
+                    22
                   </Text>
                   <Text className="text-[11px] text-primaryColor font-normal font-poppins">
                     Seconds
