@@ -44,7 +44,7 @@ const Features = () => {
               <Text className="px-[12px] py-[4px] bg-ThirdColor text-[12px] font-normal font-poppins text-Secondary rounded-[4px] absolute top-3 left-3">
                 -40%
               </Text>
-              <Text className="w-full bg-primaryColor py-2 text-Secondary text-center absolute bottom-0 hidden group-hover:block group-hover:duration-300 duration-300 cursor-pointer">
+              <Text className="w-full bg-primaryColor py-2 text-Secondary text-center absolute bottom-0 hidden group-hover:block group-hover:duration-300  cursor-pointer">
                 Add To Cart
               </Text>
             </div>
@@ -85,7 +85,7 @@ const Features = () => {
               <Text className="px-[12px] py-[4px] bg-ThirdColor text-[12px] font-normal font-poppins text-Secondary rounded-[4px] absolute top-3 left-3">
                 -35%
               </Text>
-              <Text className="w-full bg-primaryColor py-2 text-Secondary text-center absolute bottom-0 hidden group-hover:block group-hover:duration-300 duration-300 cursor-pointer">
+              <Text className="w-full bg-primaryColor py-2 text-Secondary text-center absolute bottom-0 hidden group-hover:block group-hover:duration-300 cursor-pointer">
                 Add To Cart
               </Text>
             </div>
@@ -126,7 +126,7 @@ const Features = () => {
               <Text className="px-[12px] py-[4px] bg-ThirdColor text-[12px] font-normal font-poppins text-Secondary rounded-[4px] absolute top-3 left-3">
                 -30%
               </Text>
-              <Text className="w-full bg-primaryColor py-2 text-Secondary text-center absolute bottom-0 hidden group-hover:block group-hover:duration-300 duration-300 cursor-pointer">
+              <Text className="w-full bg-primaryColor py-2 text-Secondary text-center absolute bottom-0 hidden group-hover:block group-hover:duration-300  cursor-pointer">
                 Add To Cart
               </Text>
             </div>
@@ -167,7 +167,7 @@ const Features = () => {
               <Text className="px-[12px] py-[4px] bg-ThirdColor text-[12px] font-normal font-poppins text-Secondary rounded-[4px] absolute top-3 left-3">
                 -25%
               </Text>
-              <Text className="w-full bg-primaryColor py-2 text-Secondary text-center absolute bottom-0 hidden group-hover:block group-hover:duration-300 duration-300 cursor-pointer">
+              <Text className="w-full bg-primaryColor py-2 text-Secondary text-center absolute bottom-0 hidden group-hover:block group-hover:duration-300  cursor-pointer">
                 Add To Cart
               </Text>
             </div>
