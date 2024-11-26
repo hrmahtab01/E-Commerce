@@ -14,7 +14,6 @@ import { CiHeadphones } from "react-icons/ci";
 import { FaGamepad } from "react-icons/fa6";
 import { GrFormPrevious } from "react-icons/gr";
 import { MdNavigateNext } from "react-icons/md";
-import InhancheImg from "../assets/inhance.png";
 import CommonBtn from "./Common/CommonBtn";
 
 const NextArrow = ({ onClick }) => (
