@@ -228,9 +228,10 @@ const Categories = () => {
               <div className="bg-[#D9D9D9]/30 w-[500px] h-[500px] rounded-full blur-[50px] z-0 "></div>
             </div>
             <img
-              className=" hidden lg:block absolute top-0  w-[600px]  h-[420px] right-[60px] rotate-y-[-180deg] z-[999]"
               src={InhancheImg}
-              alt=""
+              alt="Enhance Your Music Experience"
+              onError={() => console.error("Image failed to load")}
+              className="hidden lg:block absolute top-0 w-[600px] h-[420px] right-[60px] rotate-y-[-180deg] z-[999]"
             />
           </div>
         </div>

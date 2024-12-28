@@ -9,6 +9,7 @@ import { IoEye } from "react-icons/io5";
 import { IoMdEyeOff } from "react-icons/io";
 import { useDispatch } from "react-redux";
 import { userdata } from "../Slice/UserSlice";
+import axios from "axios";
 
 const Signup = () => {
   const [name, Setname] = useState("");
@@ -18,6 +19,7 @@ const Signup = () => {
   const [emailrr, Setemailrr] = useState("");
   const [passwordrr, Setpasswordrr] = useState("");
   const [showpass, Setshowpass] = useState(false);
+  const [userexiterr, Setuserexiterr] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -34,7 +36,7 @@ const Signup = () => {
     Setemailrr("");
   };
 
-  let HandleSubmit = () => {
+  let HandleSubmit = async () => {
     if (!name) {
       Setnamerr("name is require");
     }
@@ -45,22 +47,36 @@ const Signup = () => {
       Setpasswordrr("password is require");
     }
     if (name && email && password) {
-      dispatch(
-        userdata({
-          name: name,
-          email: email,
-          password: password,
+      await axios
+        .post("http://localhost:4000/api/v1/auth/registetion", {
+          name,
+          email,
+          password,
         })
-      );
-      localStorage.setItem(
-        "user",
-        JSON.stringify({
-          name: name,
-          email: email,
-          password: password,
+        .then((result) => {
+          console.log(result);
+          dispatch(
+            userdata({
+              name: name,
+              email: email,
+              password: password,
+            })
+          );
+          localStorage.setItem(
+            "user",
+            JSON.stringify({
+              name: name,
+              email: email,
+              password: password,
+            })
+          );
+          navigate("/Login");
         })
-      );
-      navigate("/Login");
+        .catch((Error) => {
+          if (Error.response.data.error) {
+            Setuserexiterr(Error.response.data.error);
+          }
+        });
     }
   };
   let Handleshowpassword = () => {
@@ -136,6 +152,11 @@ const Signup = () => {
               </p>
             )}
           </div>
+          {userexiterr && (
+            <p className="text-[14px] font-medium font-poppins text-red-500">
+              {userexiterr}
+            </p>
+          )}
           <CommonBtn
             onClick={HandleSubmit}
             classname="py-4 px-[122px] bg-[#DB4444] text-base text-Secondary font-medium font-poppins leading-[24px] rounded-[4px] mt-[40px]"
