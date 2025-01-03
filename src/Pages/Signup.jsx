@@ -10,6 +10,9 @@ import { IoMdEyeOff } from "react-icons/io";
 import { useDispatch } from "react-redux";
 import { userdata } from "../Slice/UserSlice";
 import axios from "axios";
+import { ThreeDots } from "react-loader-spinner";
+import { Bounce, ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Signup = () => {
   const [name, Setname] = useState("");
@@ -22,6 +25,7 @@ const Signup = () => {
   const [userexiterr, Setuserexiterr] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [loader, Setloader] = useState(false);
 
   let HandleNamevalue = (e) => {
     Setname(e.target.value);
@@ -46,37 +50,66 @@ const Signup = () => {
     if (!password) {
       Setpasswordrr("password is require");
     }
-    if (name && email && password) {
-      await axios
-        .post("http://localhost:4000/api/v1/auth/registetion", {
-          name,
-          email,
-          password,
-        })
-        .then((result) => {
-          console.log(result);
-          dispatch(
-            userdata({
-              name: name,
-              email: email,
-              password: password,
-            })
-          );
-          localStorage.setItem(
-            "user",
-            JSON.stringify({
-              name: name,
-              email: email,
-              password: password,
-            })
-          );
-          navigate("/Login");
-        })
-        .catch((Error) => {
-          if (Error.response.data.error) {
-            Setuserexiterr(Error.response.data.error);
-          }
-        });
+    try {
+      if (name && email && password) {
+        await axios
+          .post("http://localhost:4000/api/v1/auth/registetion", {
+            name,
+            email,
+            password,
+          })
+          .then((result) => {
+            toast.success("Signup successfully", {
+              position: "top-center",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: false,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+              transition: Bounce,
+            });
+
+            Setloader(true);
+            dispatch(
+              userdata({
+                name: name,
+                email: email,
+                password: password,
+              })
+            );
+            localStorage.setItem(
+              "user",
+              JSON.stringify({
+                name: name,
+                email: email,
+                password: password,
+              })
+            );
+          })
+          .then(() => {
+            setTimeout(() => {
+              Setloader(false);
+              navigate("/Login");
+            }, 2000);
+          })
+          .catch(() => {
+            toast.error("user already exist", {
+              position: "top-center",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: false,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+              transition: Bounce,
+            });
+          });
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
   let Handleshowpassword = () => {
@@ -157,12 +190,40 @@ const Signup = () => {
               {userexiterr}
             </p>
           )}
-          <CommonBtn
-            onClick={HandleSubmit}
-            classname="py-4 px-[122px] bg-[#DB4444] text-base text-Secondary font-medium font-poppins leading-[24px] rounded-[4px] mt-[40px]"
-          >
-            Create Account
-          </CommonBtn>
+          {loader ? (
+            <div className="flex justify-center mt-[40px]">
+              <ThreeDots
+                visible={true}
+                height="40"
+                width="40"
+                color="#4fa94d"
+                radius="9"
+                ariaLabel="three-dots-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+              />
+            </div>
+          ) : (
+            <CommonBtn
+              onClick={HandleSubmit}
+              classname="py-4 px-[122px] bg-[#DB4444] text-base text-Secondary font-medium font-poppins leading-[24px] rounded-[4px] mt-[40px]"
+            >
+              <ToastContainer
+                position="top-center"
+                autoClose={2000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+                transition={Bounce}
+              />
+              Create Account
+            </CommonBtn>
+          )}
           <CommonBtn classname="py-4 px-[84px] bg-[#fff] border border-[#000000]/40 text-base text-primaryColor font-medium font-poppins leading-[24px] rounded-[4px] mt-[40px] flex gap-4 items-center">
             <FcGoogle className="text-[24px]" /> Sign up with Google
           </CommonBtn>

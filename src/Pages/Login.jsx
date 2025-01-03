@@ -7,6 +7,7 @@ import { IoEye } from "react-icons/io5";
 import { IoMdEyeOff } from "react-icons/io";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   const [email, Setemail] = useState("");
@@ -26,17 +27,27 @@ const Login = () => {
     Setpasswordrr("");
   };
 
-  let HandleLogin = () => {
+  let HandleLogin = async () => {
     if (!email) {
       Setemailrr("email is require");
     }
     if (!password) {
       Setpasswordrr("password is require");
     }
-    if (data.email === email && data.password === password) {
-      navigate("/");
-    } else {
-      console.log("erorr");
+    if (email && password) {
+      axios
+        .post("http://localhost:4000/api/v1/auth/login", {
+          email,
+          password,
+        })
+        .then((result) => {
+          if (result.data.message === "login successfully") {
+            navigate("/Account");
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
   };
   let Handleshowpassword = () => {

@@ -3,7 +3,7 @@ import Container from "../Components/Common/Container";
 import Text from "../Components/Common/Text";
 import Title from "../Components/Common/Title";
 import { useSelector } from "react-redux";
-import { setupListeners } from "@reduxjs/toolkit/query";
+
 
 const Account = () => {
   const data = useSelector((state) => state.userinfo.value);
