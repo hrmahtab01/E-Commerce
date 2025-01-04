@@ -9,6 +9,8 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ThreeDots } from "react-loader-spinner";
+import { Bounce, Slide, ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [email, Setemail] = useState("");
@@ -37,7 +39,6 @@ const Login = () => {
       Setpasswordrr("password is require");
     }
     if (email && password) {
-      
       axios
         .post("http://localhost:4000/api/v1/auth/login", {
           email,
@@ -45,6 +46,17 @@ const Login = () => {
         })
         .then((result) => {
           if (result.data.message === "login successfully") {
+            toast.success("Login successfully", {
+              position: "top-right",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: false,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+              transition: Slide,
+            });
             Setloader(true);
             setTimeout(() => {
               Setloader(false);
@@ -53,7 +65,18 @@ const Login = () => {
           }
         })
         .catch((error) => {
-          console.log(error);
+          toast.error('something went wrong', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Slide,
+            });
+          
         });
     }
   };
@@ -133,11 +156,24 @@ const Login = () => {
                 ) : (
                   <CommonBtn
                     onClick={HandleLogin}
-                    classname="py-4 px-[48px] bg-[#DB4444] text-base text-Secondary font-medium font-poppins leading-[24px] rounded-[4px] "
+                    classname="h-14 w-44 bg-[#DB4444] text-base text-Secondary font-medium font-poppins leading-[24px] rounded-[4px] "
                   >
                     Log In
                   </CommonBtn>
                 )}
+                <ToastContainer
+                  position="top-right"
+                  autoClose={2000}
+                  hideProgressBar={false}
+                  newestOnTop={false}
+                  closeOnClick={false}
+                  rtl={false}
+                  pauseOnFocusLoss
+                  draggable
+                  pauseOnHover
+                  theme="colored"
+                  transition={Slide}
+                />
 
                 <Text className="text-base text-ThirdColor font-normal  font-poppins leading-[24px] cursor-pointer">
                   Forget Password?
