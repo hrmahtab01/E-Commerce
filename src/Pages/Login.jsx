@@ -8,6 +8,7 @@ import { IoMdEyeOff } from "react-icons/io";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { ThreeDots } from "react-loader-spinner";
 
 const Login = () => {
   const [email, Setemail] = useState("");
@@ -17,6 +18,7 @@ const Login = () => {
   const [showpass, Setshowpass] = useState(false);
   const data = useSelector((state) => state.userinfo.value);
   const navigate = useNavigate();
+  const [loader, Setloader] = useState(false);
 
   let Handleemailvalue = (e) => {
     Setemail(e.target.value);
@@ -35,6 +37,7 @@ const Login = () => {
       Setpasswordrr("password is require");
     }
     if (email && password) {
+      
       axios
         .post("http://localhost:4000/api/v1/auth/login", {
           email,
@@ -42,7 +45,11 @@ const Login = () => {
         })
         .then((result) => {
           if (result.data.message === "login successfully") {
-            navigate("/Account");
+            Setloader(true);
+            setTimeout(() => {
+              Setloader(false);
+              navigate("/Account");
+            }, 2000);
           }
         })
         .catch((error) => {
@@ -110,12 +117,28 @@ const Login = () => {
               </div>
 
               <div className="flex gap-[87px] items-center mt-[40px]">
-                <CommonBtn
-                  onClick={HandleLogin}
-                  classname="py-4 px-[48px] bg-[#DB4444] text-base text-Secondary font-medium font-poppins leading-[24px] rounded-[4px] "
-                >
-                  Log In
-                </CommonBtn>
+                {loader ? (
+                  <div className="flex justify-center ">
+                    <ThreeDots
+                      visible={true}
+                      height="40"
+                      width="40"
+                      color="#4fa94d"
+                      radius="9"
+                      ariaLabel="three-dots-loading"
+                      wrapperStyle={{}}
+                      wrapperClass=""
+                    />
+                  </div>
+                ) : (
+                  <CommonBtn
+                    onClick={HandleLogin}
+                    classname="py-4 px-[48px] bg-[#DB4444] text-base text-Secondary font-medium font-poppins leading-[24px] rounded-[4px] "
+                  >
+                    Log In
+                  </CommonBtn>
+                )}
+
                 <Text className="text-base text-ThirdColor font-normal  font-poppins leading-[24px] cursor-pointer">
                   Forget Password?
                 </Text>
