@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "../Components/Common/Container";
 import Text from "../Components/Common/Text";
 import Title from "../Components/Common/Title";
 import { useSelector } from "react-redux";
-
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
+import { redirect } from "react-router-dom";
 
 const Account = () => {
   const data = useSelector((state) => state.userinfo.value);
@@ -14,15 +16,31 @@ const Account = () => {
   const [currentpass, Setcurrentpass] = useState("");
   const [newpass, Setnewpass] = useState("");
   const [confirmpass, Setconfirmpass] = useState("");
+  const [cookiesdata, Setcookiesdata] = useState("");
+  const navigaate = useNavigate();
+  
 
   let Handleupdatesave = () => {
     console.log("save your changes");
-    
   };
   let Handleupdatecancel = () => {
     console.log("cancel your changes");
-    
   };
+  useEffect(() => {
+    const cookiesvalue = Cookies.get("token");
+    Setcookiesdata(cookiesvalue);
+  }, []);
+  
+  if (!cookiesdata) {
+    navigaate("/")
+  }
+ 
+  console.log(cookiesdata);
+// if (!cookiesdata) {
+//   const redirect = ()=>{
+//     navigaate("/")
+//   }
+  
   return (
     <div className="pt-20 pb-36">
       <Container>

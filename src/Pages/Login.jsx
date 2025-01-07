@@ -11,6 +11,7 @@ import axios from "axios";
 import { ThreeDots } from "react-loader-spinner";
 import { Bounce, Slide, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Cookies from "js-cookie";
 
 const Login = () => {
   const [email, Setemail] = useState("");
@@ -45,6 +46,9 @@ const Login = () => {
           password,
         })
         .then((result) => {
+          console.log(result);
+          
+          const token = result.data.token;
           if (result.data.message === "login successfully") {
             toast.success("Login successfully", {
               position: "top-right",
@@ -57,6 +61,7 @@ const Login = () => {
               theme: "colored",
               transition: Slide,
             });
+            Cookies.set("token", token);
             Setloader(true);
             setTimeout(() => {
               Setloader(false);
@@ -65,7 +70,7 @@ const Login = () => {
           }
         })
         .catch((error) => {
-          toast.error('invalid credentials', {
+          toast.error("invalid credentials", {
             position: "top-right",
             autoClose: 2000,
             hideProgressBar: false,
@@ -75,8 +80,7 @@ const Login = () => {
             progress: undefined,
             theme: "colored",
             transition: Slide,
-            });
-          
+          });
         });
     }
   };
