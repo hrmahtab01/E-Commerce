@@ -60,11 +60,36 @@ const PrevArrow = ({ onClick }) => (
 );
 
 const Categories = () => {
+  const calculateTimeLeft = () => {
+    const targetDate = new Date("2025-02-20T00:00:00");
+    const currentDate = new Date();
+    const difference = targetDate - currentDate;
+
+    let days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    let hours = Math.floor(
+      (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    let minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    return { days, hours, minutes, seconds };
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 7, // default for small screens
+    slidesToShow: 7,
     slidesToScroll: 5,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
@@ -188,36 +213,36 @@ const Categories = () => {
               </div>
               <div className="flex lg:gap-6 gap-4 mt-[32px]">
                 <div className="w-[62px] h-[62px] bg-Secondary rounded-full flex flex-col justify-center items-center">
-                  <Text className="text-base text-primaryColor font-poppins font-semibold">
-                    48
-                  </Text>
-                  <Text className="text-[11px] text-primaryColor font-normal font-poppins">
+                  <span className="text-base text-primaryColor font-poppins font-semibold">
+                    {timeLeft.days}
+                  </span>
+                  <span className="text-[11px] text-primaryColor font-normal font-poppins">
                     Days
-                  </Text>
+                  </span>
                 </div>
                 <div className="w-[62px] h-[62px] bg-Secondary rounded-full flex flex-col justify-center items-center">
-                  <Text className="text-base text-primaryColor font-poppins font-semibold">
-                    12
-                  </Text>
-                  <Text className="text-[11px] text-primaryColor font-normal font-poppins">
+                  <span className="text-base text-primaryColor font-poppins font-semibold">
+                    {timeLeft.hours}
+                  </span>
+                  <span className="text-[11px] text-primaryColor font-normal font-poppins">
                     Hours
-                  </Text>
+                  </span>
                 </div>
                 <div className="w-[62px] h-[62px] bg-Secondary rounded-full flex flex-col justify-center items-center">
-                  <Text className="text-base text-primaryColor font-poppins font-semibold">
-                    58
-                  </Text>
-                  <Text className="text-[11px] text-primaryColor font-normal font-poppins">
+                  <span className="text-base text-primaryColor font-poppins font-semibold">
+                    {timeLeft.minutes}
+                  </span>
+                  <span className="text-[11px] text-primaryColor font-normal font-poppins">
                     Minutes
-                  </Text>
+                  </span>
                 </div>
                 <div className="w-[62px] h-[62px] bg-Secondary rounded-full flex flex-col justify-center items-center">
-                  <Text className="text-base text-primaryColor font-poppins font-semibold">
-                    22
-                  </Text>
-                  <Text className="text-[11px] text-primaryColor font-normal font-poppins">
+                  <span className="text-base text-primaryColor font-poppins font-semibold">
+                    {timeLeft.seconds}
+                  </span>
+                  <span className="text-[11px] text-primaryColor font-normal font-poppins">
                     Seconds
-                  </Text>
+                  </span>
                 </div>
               </div>
               <CommonBtn classname="py-[16px] px-[48px] rounded-[4px] bg-FourColor text-base font-medium font-poppins mt-[40px]">
