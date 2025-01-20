@@ -85,7 +85,7 @@ const Categories = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const settings = {
+  const settings = {   
     dots: false,
     infinite: true,
     speed: 500,
