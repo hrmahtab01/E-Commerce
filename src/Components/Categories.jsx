@@ -14,7 +14,7 @@ import { CiHeadphones } from "react-icons/ci";
 import { FaGamepad } from "react-icons/fa6";
 import { GrFormPrevious } from "react-icons/gr";
 import { MdNavigateNext } from "react-icons/md";
-import InhancheImg from "../assets/inhance.png";
+import inhanceimage from "../assets/Inhance.png"
 import CommonBtn from "./Common/CommonBtn";
 
 const NextArrow = ({ onClick }) => (
@@ -253,7 +253,7 @@ const Categories = () => {
               <div className="bg-[#D9D9D9]/30 w-[500px] h-[500px] rounded-full blur-[50px] z-0 "></div>
             </div>
             <img
-              src={InhancheImg}
+              src={inhanceimage}
               alt="Enhance Your Music Experience"
               onError={() => console.error("Image failed to load")}
               className="hidden lg:block absolute top-0 w-[600px] h-[420px] right-[60px] rotate-y-[-180deg] z-[999]"
